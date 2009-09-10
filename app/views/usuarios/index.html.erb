@@ -1,0 +1,16 @@
+<h1>Listing usuarios</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Fecha nacimiento</th>
+    <th></th>
+  </tr>
+  <%= render :partial => @usuarios %>
+  <%# render :partial => "usuario", :collection => @usuarios %>
+</table>
+
+<br />
+
+<%= link_to 'New usuario', new_usuario_path %>

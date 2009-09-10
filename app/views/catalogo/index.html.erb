@@ -1,0 +1,16 @@
+<h1>Nuestros Productos</h1>
+
+
+<%= will_paginate @productos %>
+<ul class="lista">
+  <% @productos.each do |p| %>
+  <li>
+    <h3><%= p.nombre %></h3>
+    <%= image_tag p.foto.url(:small) %>
+    <span class="precio"><%= p.precio %></span>
+    <%= link_to "Adicionar", "/carrito_sessions/new/#{p.id}", :class => "add" %>
+  </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @productos %>

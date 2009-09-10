@@ -1,0 +1,19 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @producto.nombre %>
+</p>
+
+<p>
+  <b>Precio:</b>
+  <%=h @producto.precio %>
+</p>
+
+<p>
+  <b>Foto file name:</b>
+  <%= image_tag  @producto.foto.url(:medium) %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_producto_path(@producto) %> |
+<%= link_to 'Back', productos_path %>

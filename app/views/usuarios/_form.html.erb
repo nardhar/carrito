@@ -1,0 +1,42 @@
+<% form_for(@usuario) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido %>
+  </p>
+  <p>
+    <%= f.label :fecha_nacimiento %><br />
+    <%= f.date_select :fecha_nacimiento %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :tipo %><br />
+    <%= f.select :tipo, Usuario.tipos_list, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <% if params[:controller] == "usuarios" and ["new","create"].include?(params[:action]) %>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :value => "" %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <% end %>
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>
+

@@ -1,0 +1,34 @@
+body{
+    background-color:#FFF;
+    color:#000;
+}
+table{
+    border-collapse:collapse;
+}
+td,th{
+    padding:2px 4px;
+}
+
+ul.lista{
+    padding: 5px;
+    list-style: none;
+}
+ul.lista li{
+    border-bottom: 1px solid #EFEFEF;
+}
+a.add{
+    font-size: 1.2em;
+    padding: 4px 10px;
+    background-color: #207F0F;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+a.add:hover{
+    background-color: navy;
+}
+input.num{
+    text-align: right;
+    width: 4em;
+    
+}

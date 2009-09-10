@@ -1,0 +1,35 @@
+<h1>Carrito de Compras</h1>
+
+<%= link_to "Listado de productos", "/catalogo" %>
+<%= form_tag "/carrito_sessions/update"  %>
+<table>
+  <tr>
+    <th>imagen</th>
+    <th>Producto</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+    <th>Subtotal</th>
+    <th></th>
+  </tr>
+<% @carrito.lista_productos.each do |c| %>
+  <tr>
+    <%= hidden_field_tag "carrito[][id]", c.id %>
+    <td><%= image_tag c.imagen %></td>
+    <td><%= c.nombre %></td>
+    <td><%= c.precio %></td>
+    <td><%= text_field_tag "carrito[][cantidad]", c.cantidad, :class => 'num' %></td>
+    <td><%= c.subtotal %></td>
+    <td><%= link_to "eliminar", "/carrito_sessions/destroy/#{c.id}"  %></td>
+  </tr>
+<% end %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= @carrito.total %></td>
+    <td></td>
+  </tr>
+</table>
+<%= submit_tag "Actualizar" %>
+</form>

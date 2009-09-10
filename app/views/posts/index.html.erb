@@ -1,0 +1,21 @@
+<% content_for :title do %>
+"Posts"
+<% end %>
+
+<table>
+  <tr>
+    <th>Usuario</th>
+    <th>Comentario</th>
+  </tr>
+  <% for post in @posts %>
+    <tr>
+      <td><%=h post.usuario %></td>
+      <td><%=h post.comentario %></td>
+      <td><%= link_to "Show", post %></td>
+      <td><%= link_to "Edit", edit_post_path(post) %></td>
+      <td><%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Post", new_post_path %></p>

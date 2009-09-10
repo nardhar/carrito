@@ -1,0 +1,19 @@
+<% form_for(@producto, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label(:nombre) %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :precio %><br />
+    <%= f.text_field :precio %>
+  </p>
+  <p>
+    <%= f.label :foto %><br />
+    <%= f.file_field :foto %>
+  </p>
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>

@@ -1,0 +1,9 @@
+<tr>
+  <td><%= usuario.nombre %></td>
+  <td><%= usuario.apellido %></td>
+  <td><%= I18n.l usuario.fecha_nacimiento, :format => "%d de %B %y" %></td>
+  <td>
+    <%= link_to "editar", edit_usuario_path(usuario) %>
+    <%= link_to "borrar", usuario, :method => :delete %>
+  </td>
+</tr>

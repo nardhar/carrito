@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  precio: 9.99
+  foto_file_name: MyString
+  foto_file_size: 1
+  foto_content_type: MyString
+
+two:
+  nombre: MyString
+  precio: 9.99
+  foto_file_name: MyString
+  foto_file_size: 1
+  foto_content_type: MyString
