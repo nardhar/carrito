@@ -3,5 +3,5 @@ nbproject/
 *.swp
 *.swo
 public/system/fotos
-
-
+*.log
+*.sqlite3
