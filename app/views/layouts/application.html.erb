@@ -4,12 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= h(yield(:title) || "")  %> - Archivaldo</title>
+  <title><%= h(yield(:title) || "")  %> - Carrito de Compras</title>
   <%= stylesheet_link_tag "style" %>
 </head>
 <body>
 <div id="cont">
   <%= login %>
+  <%= link_to "Ver Carrito de Compras", "/carrito_sessions" %>
   <div id="flashNotice"><%= flash[:notice] %></div>
 
   <%= yield %>

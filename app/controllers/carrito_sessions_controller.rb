@@ -19,4 +19,5 @@ class CarritoSessionsController < ApplicationController
     end
     redirect_to "/carrito_sessions/"
   end
+  
 end

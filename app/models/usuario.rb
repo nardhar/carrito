@@ -22,6 +22,10 @@ class Usuario < ActiveRecord::Base
     nombre_completo
   end
 
+  def tipo_p
+    @@tipos[read_attribute(:tipo)]
+  end
+
   def tipos
     @@tipos
   end

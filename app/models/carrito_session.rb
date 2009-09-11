@@ -40,6 +40,11 @@ class CarritoSession
     self.lista.delete(buscar_en_lista(producto_id))
   end
 
+  def borrar
+    self.lista = []
+    self.total = 0
+  end
+
   protected
   def existe?(producto_id)
     lista.select{|v| v[:producto_id] == producto_id }.size == 1
