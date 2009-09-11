@@ -20,4 +20,9 @@ class ApplicationController < ActionController::Base
   def adicionar_paginacion
     @page = params[:page] or 1
   end
+  def permiso
+    if session[:usuario].nil? or session[:usuario][:tipo] != 'admin'
+      redirect_to "/"
+    end
+  end
 end

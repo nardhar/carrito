@@ -1,6 +1,9 @@
 class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.xml
+
+  before_filter :permiso
+
   def index
     @productos = Producto.all
 

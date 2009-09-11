@@ -1,7 +1,7 @@
 <h1>Carrito de Compras</h1>
 
 <%= link_to "Listado de productos", "/catalogo" %>
-<%= form_tag "/compras/new"  %>
+<%  form_for @compra do |f| %>
 <table>
   <tr>
     <th>imagen</th>
@@ -12,7 +12,6 @@
   </tr>
 <% @carrito.lista_productos.each do |c| %>
   <tr>
-    <%= hidden_field_tag "carrito[][id]", c.id %>
     <td><%= image_tag c.imagen %></td>
     <td><%= c.nombre %></td>
     <td><%= c.precio %></td>
@@ -28,5 +27,5 @@
     <td><%= @carrito.total %></td>
   </tr>
 </table>
-<%= submit_tag "Comprar" %>
-</form>
+<%= f.submit "Comprar" %>
+<% end %>

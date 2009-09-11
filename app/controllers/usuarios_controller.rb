@@ -1,6 +1,9 @@
 class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.xml
+
+  before_filter :permiso, :except => [:show]
+
   def index
     @usuarios = Usuario.all
 
@@ -14,8 +17,19 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.xml
   def show
+=begin
+    unless session[:usuario].nil?
+      if session[:usuario][:tipo] == 'admin'
+        @usuario = Usuario.find(params[:id])
+      else
+        @usuario = Usuario.find(session[:usuario][:id])
+      end
+    else
+      redirect_to "/"
+    end
+=end
     @usuario = Usuario.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @usuario }
